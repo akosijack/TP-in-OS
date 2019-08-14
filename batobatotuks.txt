@@ -1,0 +1,156 @@
+import random
+import time
+
+rounds = 0
+Cscore = 0
+Pscore = 0
+roundss = 0
+
+Playername = input("Enter Player name: ")
+Computername = input("Enter Computer name: ")
+roundss = int(input("Race to?"))
+
+while True :
+    print() 
+    print("---CHOOSE---")
+    print("---------------")
+    choose = str(input("Choose: [Rock] [Paper] or [Scissors]"))
+    choose = choose.lower()
+
+    computer_choose = ['rock','paper','scissors']
+
+    computer_random_choose = random.choice(computer_choose)
+    print() 
+    print("-----BATO BATO PICK!-----")
+    print("-------------------------")
+    
+    print(Playername, "choose: ", choose)
+    
+    time.sleep(2)
+    print(Computername, "Computer choose: ",computer_random_choose)
+    
+    if choose in computer_choose:
+        if choose.lower() == computer_random_choose:
+            print("It is a tie in this round")
+            
+            
+        if choose.lower() == "rock":
+            if computer_random_choose == "scissors":
+                print(Playername,"Win in this round")  
+                Pscore = Pscore + 1
+                if Pscore == roundss:
+                    print() 
+                    print("---Standing---")
+                    print("---------")
+                    print("Player score: ", Pscore)
+                    print("Computer score: ", Cscore)
+                    print(Playername, " wins")
+                    dec = input("Do you want to continue? y/n ")
+                    if dec == 'n':
+                        break
+                    else:
+                        Pscore = 0
+                        Cscore = 0
+                        continue
+                
+            elif computer_random_choose == "paper":
+                print(Computername,"Win in this round")
+                Cscore = Cscore + 1
+                if Cscore == roundss:
+                    print() 
+                    print("---Standing---")
+                    print("---------")
+                    print("Player score: ", Pscore)
+                    print("Computer score: ", Cscore)
+                    print(Computername, " wins")
+                    dec = input("Do you want to continue? y/n ")
+                    if dec == 'n':
+                        break
+                    else:
+                        Pscore = 0
+                        Cscore = 0
+                        continue
+                    
+        if choose.lower() == "scissors":
+            if computer_random_choose =="paper":
+                print(Playername,"Win in this round")
+                Pscore = Pscore + 1
+                if Pscore == roundss:
+                    print() 
+                    print("---Standing---")
+                    print("---------")
+                    print("Player score: ", Pscore)
+                    print("Computer score: ", Cscore)
+                    print(Playername, " wins")
+                    dec = input("Do you want to continue? y/n ")
+                    if dec == 'n':
+                        break
+                    else:
+                        Pscore = 0
+                        Cscore = 0
+                        continue
+
+            elif computer_random_choose == "rock":
+                print(Computername,"Win in this round")
+                Cscore = Cscore + 1
+                if Cscore == roundss:
+                    print() 
+                    print("---Standing---")
+                    print("---------")
+                    print("Player score: ", Pscore)
+                    print("Computer score: ", Cscore)
+                    print(Computername, " wins")
+                    dec = input("Do you want to continue? y/n ")
+                    if dec == 'n':
+                        break
+                    else:
+                        Pscore = 0
+                        Cscore = 0
+                        continue
+
+        if choose.lower() == "paper":
+            if computer_random_choose =="scissors":
+                print(Computername,"Win in this round")
+                Cscore = Cscore + 1
+                if Cscore == roundss:
+                    print() 
+                    print("---Standing---")
+                    print("---------")
+                    print("Player score: ", Pscore)
+                    print("Computer score: ", Cscore)
+                    print(Computername, " wins")
+                    dec = input("Do you want to continue? y/n ")
+                    if dec == 'n':
+                        break
+                    else:
+                        Pscore = 0
+                        Cscore = 0
+                        continue
+                
+            elif computer_random_choose == "rock":
+                print(Playername,"Win in this round")
+                Pscore = Pscore + 1
+                if Pscore == roundss:
+                    print() 
+                    print("---Standing---")
+                    print("---------")
+                    print("Player score: ", Pscore)
+                    print("Computer score: ", Cscore)
+                    print(Playername, " wins")
+                    dec = input("Do you want to continue? y/n ")
+                    if dec == 'n':
+                        break
+                    else:
+                        Pscore = 0
+                        Cscore = 0
+                        continue
+        print() 
+        print("---Standing---")
+        print("---------")
+        print("Player score: ", Pscore)
+        print("Computer score: ", Cscore)
+        
+    else:
+        print("invalid choose, try again")
+        continue  
+                      
